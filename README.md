@@ -1,7 +1,6 @@
 <div align="center">
   <h1>ASP Globalization Sample Project</h1>
   <br />
-  <br />
   <a href="https://github.com/HamidMolareza/ASP-Globalization-Sample/issues/new?assignees=&labels=bug&template=BUG_REPORT.md&title=bug%3A+">Report a Bug</a>
   ·
   <a href="https://github.com/HamidMolareza/ASP-Globalization-Sample/issues/new?assignees=&labels=enhancement&template=FEATURE_REQUEST.md&title=feat%3A+">Request a Feature</a>
@@ -13,6 +12,7 @@
 <br />
 
 ![Build Status](https://github.com/HamidMolareza/ASP-Globalization-Sample/actions/workflows/build.yml/badge.svg?branch=main)
+
 ![GitHub](https://img.shields.io/github/license/HamidMolareza/ASP-Globalization-Sample)
 [![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/HamidMolareza/ASP-Globalization-Sample/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
 
@@ -35,7 +35,7 @@ The ASP Globalization Sample Project is designed to demonstrate the implementati
 - How to use resource files for storing localized strings.
 - How to dynamically switch languages based on user preferences or browser settings.
 
-### Sample Supported Languages:
+**Sample Supported Languages:**
 
 - en (default)
 - fa
