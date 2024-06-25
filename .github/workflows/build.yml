@@ -9,13 +9,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  conditional_job:
-    if: github.ref == 'refs/heads/main' && github.event.head_commit.modified != null && contains(github.event.head_commit.modified, 'src/')
-    
-    runs-on: ubuntu-latest
   build:
+    if: github.ref == 'refs/heads/main' && github.event.head_commit.modified != null && contains(github.event.head_commit.modified, 'src/')
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
