@@ -35,74 +35,70 @@ The ASP Globalization Sample Project is designed to demonstrate the implementati
 - How to use resource files for storing localized strings.
 - How to dynamically switch languages based on user preferences or browser settings.
 
-### Demo
+### Sample Supported Languages:
 
-**Screenshot**: If the software has visual components, place a screenshot after the description; e.g.,
-
-<details>
-<summary>Screenshots</summary>
-<br>
-
-> **[?]**
-> Please provide your screenshots here.
-
-|                               Home Page                               |                               Login Page                               |
-| :-------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-| <img src="docs/images/screenshot.png" title="Home Page" width="100%"> | <img src="docs/images/screenshot.png" title="Login Page" width="100%"> |
-
-</details>
+- en (default)
+- fa
 
 ### Built With
 
-> **[?]**
-> Please provide the technologies that are used in the project.
-
-**Client:** React, Redux, TailwindCSS
-
-**Server:** Node, Express
+- .NET 8
 
 ## Getting Started
 
 ### Prerequisites
 
-> **[?]**
-> What are the project requirements/dependencies?
-> Describe any dependencies that must be installed for this software to work. This includes programming languages, databases or other storage mechanisms, build tools, frameworks, and so forth. If specific versions of other software are required, or known not to work, call that out.
+- Clone project
+- Install dotnet 8 or docker
 
-### Installation
+### How to run?
 
-> **[?]**
-> Describe how to install and get started with the project.
-> Detailed instructions on how to install, configure, and get the project running. This should be frequently tested to ensure reliability. Alternatively, link to a separate [INSTALL](INSTALL.md) document.
+#### Approach 1: Use dotnet
 
-## Usage
-
-> **[?]**
-> How does one go about using it?
-> Provide various use cases and code examples here.
-
-```javascript
-import Component from 'my-project'
-
-function App() {
-    return <Component/>
-}
+```bash
+dotnet restore src
+dotnet build src
+dotnet run --project src/Globalization.csproj 
 ```
 
-### Documentation
+#### Approach 2: Use docker
 
-[Documentation](https://linktodocumentation)
+```bash
+docker build -t globalization:latest .
+docker run globalization:latest
+```
 
-## Known issues
+### How to use?
 
-Document any known significant shortcomings with the software.
+After the project is executed, you can use swagger or [Globalization.http](src/Globalization.http) file.
 
-## CHANGELOG
+## Project Structure
 
-## Features
-
--
--
+```txt
+├── appsettings.Development.json
+├── appsettings.json
+├── Controllers
+│   └── HelloController.cs
+├── Globalization.csproj
+├── Globalization.http
+├── Globalization.sln
+├── Models
+│   └── FullName.cs
+├── Program.cs
+├── Properties
+│   └── launchSettings.json
+├── Resources
+│   ├── Controllers.HelloController.en.resx
+│   ├── Controllers.HelloController.fa.Designer.cs
+│   ├── Controllers.HelloController.fa.resx
+│   └── Models
+│       ├── FullName.en.resx
+│       ├── FullName.fa.Designer.cs
+│       ├── FullName.fa.resx
+│       └── FullName.resx
+└── Swagger
+    └── AddHeaderOperationFilter.cs
+```
 
 ## Roadmap
 
@@ -117,41 +113,10 @@ issues).
 
 ## Support
 
-> **[?]**
-> Provide additional ways to contact the project maintainer/maintainers.
-
 Reach out to the maintainer at one of the following places:
 
 - [GitHub issues](https://github.com/HamidMolareza/ASP-Globalization-Sample/issues/new?assignees=&labels=question&template=SUPPORT_QUESTION.md&title=support%3A+)
 - Contact options listed on [this GitHub profile](https://github.com/HamidMolareza)
-
-## Used By
-
-This project is used by the following companies:
-
-- Company 1
-- Company 2
-
-## FAQ
-
-#### Question 1
-
-Answer 1
-
-#### Question 2
-
-Answer 2
-
-## Project assistance
-
-If you want to say **thank you** or/and support active development of PROJECT_NAME:
-
-- Add a [GitHub Star](https://github.com/HamidMolareza/ASP-Globalization-Sample) to the project.
-- Tweet about the PROJECT_NAME.
-- Write interesting articles about the project on [Dev.to](https://dev.to/), [Medium](https://medium.com/) or your
-  personal blog.
-
-Together, we can make PROJECT_NAME **better**!
 
 ## Contributing
 
@@ -170,7 +135,7 @@ see [the contributors page](https://github.com/HamidMolareza/ASP-Globalization-S
 
 ## Security
 
-PROJECT_NAME follows good practices of security, but 100% security cannot be assured. PROJECT_NAME is provided **"as
+This project follows good practices of security, but 100% security cannot be assured. This project is provided **"as
 is"** without any **warranty**.
 
 _For more information and to report security issues, please refer to our [security documentation](docs/SECURITY.md)._
@@ -181,16 +146,6 @@ This project is licensed under the **GPLv3**.
 
 See [LICENSE](LICENSE) for more information.
 
-## Acknowledgements
-
-> **[?]**
-> If your work was funded by any organization or institution, acknowledge their support here.
-> In addition, if your work relies on other software libraries, or was inspired by looking at other work, it is appropriate to acknowledge this intellectual debt too.
-
 ## Related
 
-Here are some related projects
-
-[Awesome README](https://github.com/matiassingers/awesome-readme)
-
-
+- [Globalization and localization in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/localization?view=aspnetcore-8.0)
