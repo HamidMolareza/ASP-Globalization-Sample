@@ -37,20 +37,16 @@ app.UseRequestLocalization(new RequestLocalizationOptions {
     SupportedUICultures = supportedCultures
 });
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment()) {
-    app.UseSwagger();
-    // Enable middleware to serve Swagger UI
-    app.UseSwaggerUI(c => {
-        c.DefaultModelExpandDepth(2);
-        c.DefaultModelRendering(ModelRendering.Model);
-        c.DefaultModelsExpandDepth(-1);
-        c.DisplayOperationId();
-        c.DisplayRequestDuration();
-        c.DocExpansion(DocExpansion.None);
-        c.EnableDeepLinking();
-    });
-}
+app.UseSwagger();
+app.UseSwaggerUI(c => {
+    c.DefaultModelExpandDepth(2);
+    c.DefaultModelRendering(ModelRendering.Model);
+    c.DefaultModelsExpandDepth(-1);
+    c.DisplayOperationId();
+    c.DisplayRequestDuration();
+    c.DocExpansion(DocExpansion.None);
+    c.EnableDeepLinking();
+});
 
 app.UseAuthorization();
 
