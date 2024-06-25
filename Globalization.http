@@ -1,0 +1,28 @@
+#https://learn.microsoft.com/en-us/aspnet/core/fundamentals/localization/select-language-culture?view=aspnetcore-8.0
+
+@Globalization_HostAddress = http://localhost:5235
+
+# English
+GET {{Globalization_HostAddress}}/Hello?Name=Hamid&Family=Molareza
+Accept: application/json
+Accept-Language: en
+###
+
+# Persian
+GET {{Globalization_HostAddress}}/Hello?Name=حمید&Family=ملارضا
+Accept: application/json
+Accept-Language: fa
+###
+
+# Error (Family is required)
+GET {{Globalization_HostAddress}}/Hello?Name=Hamid
+Accept: application/json
+Accept-Language: en
+### 
+GET {{Globalization_HostAddress}}/Hello?Name=حمید
+Accept: application/json
+Accept-Language: fa
+### 
+GET {{Globalization_HostAddress}}/Hello?Name=حمید
+Accept: application/json
+Accept-Language: fa-az
