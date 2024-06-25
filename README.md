@@ -65,12 +65,17 @@ dotnet run --project src/Globalization.csproj
 
 ```bash
 docker build -t globalization:latest .
-docker run globalization:latest
+docker run --rm -p 8080:8080 globalization:latest
+```
+
+Finally you can remove the image with the below command:
+```bash
+docker rmi -f globalization
 ```
 
 ### How to use?
 
-After the project is executed, you can use swagger or [Globalization.http](src/Globalization.http) file.
+After the project is executed, you can use [swagger](http://localhost:8080/swagger/) or [Globalization.http](src/Globalization.http) file.
 
 ## Project Structure
 
