@@ -4,26 +4,32 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'src/**'
   workflow_dispatch:
 
 jobs:
+  conditional_job:
+    if: github.ref == 'refs/heads/main' && github.event.head_commit.modified != null && contains(github.event.head_commit.modified, 'src/')
+    
+    runs-on: ubuntu-latest
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.x'
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.x'
 
-    - name: Restore dependencies
-      run: dotnet restore src
+      - name: Restore dependencies
+        run: dotnet restore src
 
-    - name: Build the project
-      run: dotnet build src --configuration Release
+      - name: Build the project
+        run: dotnet build src --configuration Release
 
     # - name: Run tests
     #   run: dotnet test --no-build --verbosity normal
